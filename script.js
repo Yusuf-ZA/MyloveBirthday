@@ -99,7 +99,7 @@ function createHearts() {
 giftBtn.addEventListener("click", function () {
     giftMessage.style.display = "block";
     giftMessage.textContent =
-        "Tadaaa!!!!! Happy Birthday..... sayangkuu, cintaku, cantikku  banyak ya lovenya tapi ini masih kurang banyak sama cintaku ke kamu 💗 ";
+        "Tadaaa!!!!! Happy Birthday..... sayangkuu, cintaku, cantikku....  banyak ya lovenya berjatuhan hehehe tapi ini masih kurang banyak sama cintaku ke kamu 💗 ";
 
     giftBtn.textContent = "💝";
     giftBtn.disabled = true;
