@@ -1,0 +1,512 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff0f5;
+    color: #5c3448;
+    text-align: center;
+}
+
+/* Bagian utama */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background: linear-gradient(
+        135deg,
+        #ffe4ec,
+        #ffc1d6,
+        #fff0f5
+    );
+}
+
+.hero-content {
+    max-width: 700px;
+    padding: 45px 30px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid white;
+    border-radius: 28px;
+    box-shadow: 0 15px 45px rgba(190, 80, 125, 0.15);
+}
+
+.subtitle {
+    color: #d65b91;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #c7437d;
+    font-size: clamp(38px, 7vw, 65px);
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+/* Tombol */
+button {
+    background: linear-gradient(135deg, #ed78a8, #c7437d);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 7px 20px rgba(199, 67, 125, 0.25);
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(199, 67, 125, 0.35);
+}
+
+/* Bagian hadiah */
+.gift-section {
+    min-height: 65vh;
+    padding: 90px 20px;
+    background: #fff8fb;
+}
+
+.gift-section h2 {
+    color: #c7437d;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.gift-section p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+#giftBtn {
+    display: block;
+    margin: 25px auto;
+    font-size: 55px;
+    padding: 20px 35px;
+    background: white;
+    border: 2px solid #ffc1d6;
+    border-radius: 25px;
+}
+
+#giftMessage {
+    color: #c7437d;
+    margin-top: 25px;
+    font-size: 27px;
+}
+
+/* Footer */
+footer {
+    padding: 25px;
+    background: #f8c5d9;
+    color: #7e3658;
+    font-size: 14px;
+}
+
+/* Surat spesial */
+.letter-section {
+    padding: 80px 20px;
+    background: #ffeaf2;
+}
+
+.letter-section h2,
+.gallery-section h2 {
+    color: #c7437d;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.letter-section p,
+.gallery-section p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.love-letter {
+    max-width: 600px;
+    margin: 25px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(190, 80, 125, 0.12);
+}
+
+.love-letter summary {
+    color: #c7437d;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.letter-content {
+    margin-top: 25px;
+    padding: 20px;
+    background: #fff5f9;
+    border-radius: 15px;
+    line-height: 1.8;
+}
+
+.letter-content h3 {
+    color: #c7437d;
+    margin-bottom: 15px;
+}
+
+/* Galeri foto */
+.gallery-section {
+    padding: 80px 20px;
+    background: #fff8fb;
+}
+
+.gallery {
+    max-width: 900px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.photo-card {
+    min-height: 200px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffc1d6, #ffeaf2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 40px;
+    color: #a83d70;
+    box-shadow: 0 8px 20px rgba(190, 80, 125, 0.12);
+}
+
+.photo-card span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.photo-card {
+    overflow: hidden;
+    padding: 10px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.photo-card span {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* Wadah animasi hati */
+#heart-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Animasi hati */
+.floating-heart {
+    position: absolute;
+    top: -40px;
+    animation: fallingHeart linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes fallingHeart {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Animasi bagian website */
+.hero-content,
+.letter-section,
+.gallery-section,
+.music-section,
+.gift-section {
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efek foto */
+.photo-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(190, 80, 125, 0.2);
+}
+
+/* ANIMASI ROMANTIS TAMBAHAN */
+
+/* Animasi judul */
+h1, h2 {
+    animation: fadeIn 1.5s ease;
+}
+
+/* Animasi tombol */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(190, 80, 125, 0.3);
+}
+
+/* Efek foto lebih lembut */
+.photo-card img {
+    transition: transform 0.5s ease;
+}
+
+.photo-card img:hover {
+    transform: scale(1.04);
+}
+
+/* Efek muncul pada pesan */
+.gift-message {
+    animation: fadeIn 2s ease;
+}
+
+/* Transisi halaman */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    .photo-card {
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* RESPONSIVE DESIGN UNTUK HP */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 92%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .photo-card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    button {
+        padding: 12px 20px;
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+/* TOMBOL SURAT SPESIAL */
+.love-letter > summary {
+    list-style: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #d85b91, #a83268);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(190, 60, 120, 0.3);
+    transition: all 0.4s ease;
+}
+
+.love-letter > summary::-webkit-details-marker {
+    display: none;
+}
+
+.love-letter > summary:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(190, 60, 120, 0.5);
+}
+
+.love-letter > summary:active {
+    transform: scale(0.95);
+}
+
+/* ANIMASI SURAT TERBUKA */
+.love-letter[open] .letter-content {
+    animation: letterReveal 1s ease;
+}
+
+@keyframes letterReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TOMBOL HADIAH KEJUTAN */
+#giftBtn {
+    position: relative;
+    overflow: visible;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff8eb7,
+        #e84d91,
+        #b83270
+    );
+
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(232, 77, 145, 0.4);
+
+    animation: giftPulse 2s infinite;
+    transition: 0.4s ease;
+}
+
+/* Efek saat disentuh */
+#giftBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 35px rgba(232, 77, 145, 0.65);
+}
+
+/* Efek saat diklik */
+#giftBtn:active {
+    transform: scale(0.92);
+}
+
+/* Animasi denyut */
+@keyframes giftPulse {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(232, 77, 145, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 8px 35px rgba(255, 105, 180, 0.8);
+    }
+}
+
+/* Hati bergerak di sekitar tombol */
+#giftBtn::before,
+#giftBtn::after {
+    position: absolute;
+    pointer-events: none;
+    font-size: 22px;
+    animation: giftHeart 2.5s ease-in-out infinite;
+}
+
+#giftBtn::before {
+    content: "♥";
+    top: -18px;
+    left: 10%;
+}
+
+#giftBtn::after {
+    content: "♡";
+    bottom: -18px;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+/* Gerakan hati */
+@keyframes giftHeart {
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(15deg);
+        opacity: 1;
+    }
+}
